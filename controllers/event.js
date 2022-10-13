@@ -20,8 +20,6 @@ const createEvent = async(req, res = response) => {
     // Verificar que tenga el evento
     console.log("🚀 ~ file: event.js ~ line 15 ~ createEvent ~ req", req.body)
 
-    const { title, notes, start, end } = req.body;
-
     try {
 
         const event = new Event( req.body );

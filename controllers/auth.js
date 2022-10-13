@@ -16,7 +16,7 @@ const createUser =  async(req, res = response) => {
         if( usuario ){
             return res.status(400).json({
                 ok: false,
-                msg: 'There is already a user with this email'
+                msg: 'The user already exits'
             })
         }
 
@@ -107,7 +107,10 @@ const revalidationToken =  async(req, res = response) => {
 
     res.json({
         ok: true,
+        name,
+        uid,
         token
+        
     })
 
 }
