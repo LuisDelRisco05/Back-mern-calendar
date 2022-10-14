@@ -23,11 +23,14 @@ app.use( express.static('public')); //! use en express es conocido como un middl
 app.use( express.json() ); // las peticiones que vengan en formato json las voy a procesar ahí y voy a extraer su contenido
 
 //* Rutas
-//! TODO: auth // crear, login, renew
+
 app.use('/api/auth', require('./routes/auth')); // Todo lo que el archivo auth va a exportar lo va hablilitar en esta ruta 
 app.use('/api/events', require('./routes/events'));
 
-//! TODO: CRUD: Eventos
+//* Comodin para cuando las rutas de arriba, va a servir mi archivo index
+app.get('*', (req, res) => {
+    res.sendFile( __dirname + '/public/index.html');
+})
 
 //* Escuchar peticiones
 
