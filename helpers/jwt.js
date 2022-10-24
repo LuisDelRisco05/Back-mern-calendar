@@ -12,7 +12,7 @@ const generateJWT = ( uid, name ) => {
         }, ( err, token ) => {
 
             if ( err ) {
-
+                console.log(err);
                 reject( "Failed to generate token" )
             }
 
@@ -24,4 +24,4 @@ const generateJWT = ( uid, name ) => {
 };
 
 
-module.exports = generateJWT;
+module.exports = {generateJWT};
